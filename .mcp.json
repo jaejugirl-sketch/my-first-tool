@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "schoolinfo": {
+      "type": "http",
+      "url": "https://mcp.gomdori.app/school"
+    }
+  }
+}
