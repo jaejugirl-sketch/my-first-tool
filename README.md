@@ -1,22 +1,50 @@
-# my-first-tool
+# 워킹맘 발전소 — 콘텐츠 자동화 프로젝트
 
-Project configured to use the **schoolinfo** MCP server (Korean school
-information — meals, schedules, exams, curriculum, disclosures, etc.),
-served over HTTP at `https://mcp.gomdori.app/school`.
+네이버 카페 ‘워킹맘 발전소’(회원 400명)를 성격별 에이전트 6종으로 운영하기 위한
+기획·설계·착수 자료 모음. 목표는 **기사 스크랩 → 직접 쓴 콘텐츠**로 옮겨가되,
+**발행은 언제나 사람이** 하는 것.
 
-## MCP setup
+## 빠른 시작 (이번 주)
+1. `노션-대기함-템플릿.md` 대로 노션 대기함 만들기
+2. `봇지침-달맘연재봇.md`를 Claude 프로젝트/GPTs에 붙여 봇 1개 만들기
+3. 구글 캘린더에 요일별 알림 걸기 (`주간 발행 캘린더` 참고)
+4. 이미 만든 초안 3편을 대기함에 넣고 검수 → 카페 예약 발행 테스트
+   (자세한 건 `자동화-실행가이드.md`)
 
-The server is committed to this repo in [`.mcp.json`](./.mcp.json), so any
-Claude Code session opened here picks it up automatically. This is the
-project-scoped equivalent of running:
+## 파일 안내
 
-```sh
-claude mcp add --transport http schoolinfo https://mcp.gomdori.app/school
-```
+### 기획·설계
+- **`REQUIREMENTS.md`** — 요구사항 정의서(7단계) + 게시판 분석 + 에이전트 6종 + 작동 흐름
+  + 주간 캘린더 + 자동화 설계 + 운영 결정. **여기부터 보면 전체가 보임.**
+- `REQUIREMENTS-노벨문학상의숨은노력.md` — 지난 기획(개인 블로그, 별개 건)
 
-When you first use the server in a session, Claude Code will ask you to
-approve the project-scoped MCP server. Verify it is listed with:
+### 착수 키트
+- `노션-대기함-템플릿.md` — 대기함 속성·뷰·검수 루틴
+- `자동화-실행가이드.md` — 단계 A(오늘 당장)·B(노코드)·C(개발) + 착수 체크리스트
 
-```sh
-claude mcp list
-```
+### 에이전트 봇 지침 (Claude 프로젝트/GPTs에 붙여넣기)
+- `봇지침-달맘연재봇.md` — ①연재 칼럼
+- `봇지침-나머지5개봇.md` — ②정보큐레이션 ③공감·쉼 ④경험담 ⑤모집·이벤트 ⑥외부제휴
+
+### 콘텐츠 템플릿
+- `템플릿-정보큐레이션-지원사업.md` — ②큐레이션 필드·신뢰 출처·검수
+- `템플릿-나머지-에이전트.md` — ①③⑤⑥ 양식 (질문 뱅크·모집글 양식 등)
+
+### 실전 초안 (검증용)
+- `첫주-콘텐츠-초안.md` — 7일치 묶음
+- `초안-경험담-잠들고싶지않아.md` — 공연 후기(④경험담)
+- `초안-연재-달맘-상상력.md` — 연재 칼럼(①)
+- `초안-큐레이션-2026일가정양립.md` — 정보 큐레이션(②, 정부 공식 출처)
+
+## 원칙 (모든 에이전트 공통)
+- 에이전트는 **초안까지만**, 발행은 사람.
+- 발행 전 **허위 정보·비난** 검수 통과.
+- **후원·광고 결정, 체험단 최종 선정**은 사람이.
+- 정부 제도 정보는 **정책브리핑·보도자료·법령** 등 신뢰 출처 우선.
+
+## 운영 리듬
+- 하루 1건, 핵심 엔진(연재·경험담)은 수·목 고정, 주말은 가볍게.
+- 발행: 핵심 콘텐츠 밤 21시 / 정보 큐레이션 아침 7시. 검수 밤 20:30(~15분).
+- 캠페인: 월 1회, 서평단↔챌린지 격월.
+
+> 시각 요약: 설계도 아티팩트(대화에서 공유된 링크)로 한 장에 볼 수 있음.
